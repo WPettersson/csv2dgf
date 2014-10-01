@@ -5,6 +5,7 @@ import argparse
 ap = argparse.ArgumentParser()
 ap.add_argument('infile', type=argparse.FileType('rU'))
 ap.add_argument('outfile', type=argparse.FileType('w'))
+ap.add_argument('--no-loops', action='store_true')
 
 args = ap.parse_args()
 
@@ -23,7 +24,8 @@ with args.infile as csvfile:
             j += 1
             for i in range(j, vertices +1):
                 if int(row[i]) == 1:
-                    edges.append([ vert_names[i],vert_names[j] ])
+                    if not (args.no_loops and i == j):
+                        edges.append([ vert_names[i],vert_names[j] ])
 
 args.infile.close()
 
