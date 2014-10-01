@@ -3,7 +3,7 @@ import sys
 import argparse
 
 ap = argparse.ArgumentParser()
-ap.add_argument('infile', type=argparse.FileType('r'))
+ap.add_argument('infile', type=argparse.FileType('rU'))
 ap.add_argument('outfile', type=argparse.FileType('w'))
 
 args = ap.parse_args()
