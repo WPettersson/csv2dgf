@@ -10,4 +10,6 @@ The raw python code can be downloaded from https://github.com/WPettersson/csv2dg
 Usage
 =======
 
-$ python csv2dgf.py \<input_file.csv\> \<output_file.dgf\>
+$ python csv2dgf.py [--no-loops] \<input_file.csv\> \<output_file.dgf\>
+
+The <code>--no-loops</code> option makes the script ignore any loops.
